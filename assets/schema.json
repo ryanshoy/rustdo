@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "tasks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"  // Assuming tasks have unique UUID identifiers
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 100  // Limit task title to 100 characters
+            },
+            "description": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string",
+              "format": "date-time"  // Task due date in ISO 8601 format
+            },
+            "priority": {
+              "type": "string",
+              "enum": ["low", "medium", "high"]  // Priority levels
+            },
+            "completed": {
+              "type": "boolean"
+            },
+            "comments": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "comment": {
+                    "type": "string"
+                  },
+                  "comment_date": {
+                    "type": "string",
+                    "format": "date-time"  // Comment date in ISO 8601 format
+                  }
+                },
+                "required": ["comment", "comment_date"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": ["id", "title"],
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+  
