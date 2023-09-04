@@ -2,10 +2,17 @@
 name = "rustdo"
 version = "0.1.0"
 edition = "2021"
+authors = ["Ryan Hoy <ryan.s.hoy@gmail.com>"]
+description = "Learning Rust, tracking tasks"
+license = "BSD-1-Clause"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4.4", features = ["cargo"] }
+dirs = "3.0"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+toml = "0.5"

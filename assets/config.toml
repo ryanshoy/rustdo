@@ -1,0 +1,7 @@
+# Configuration for rustdo
+
+[general]
+config_file = "~/.rustdo/config.toml"
+
+[tasklist]
+path = "~/.rustdo/tasklist.json"
